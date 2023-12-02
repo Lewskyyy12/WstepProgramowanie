@@ -69,6 +69,7 @@ void cwiczenie3() {
     for (int i = 0; i < 4; i++) {
         for (int x = 0; x < 4; x++) {
            // macierzW[i][x] = macierzR[i][x] * macierzC[i][x] + macierzR[i + 1][x] * macierzC[i + 1][x] + macierzR[i + 2][x] * macierzC[i + 2][x] + macierzR[i + 3][x] * macierzC[i + 3][x];
+            macierzW[i][x] = macierzR[i][x] * macierzC[i][x] + macierzR[i][x+1] * macierzC[i][x+1] + macierzR[i][x+2] * macierzC[i][x+2] + macierzR[i][x+3] * macierzC[i][x+3];
         }
         printf("\n");
     }
