@@ -1,94 +1,139 @@
-#include <iostream>
-#include <cmath>
 #include <stdio.h>
+#include <locale.h>
 
-using namespace std;
+void ImieNazwisko(){
+    printf("Dawid Lewanodwski");
+    printf("Dawid\nLewanodwski");
+    printf("Dawid\n");
+    printf("Lewandowski\n");
 
-void zadanie1(){
-
-    int age;
-std::cin >> age;
-if( age >= 18 && age <=100 ){
-std::cout << "Authorization accepted." << std::endl;
-std::cout << "And what do you want?" << std::endl;
 }
-else
-std::cout << "End" << std::endl;
+void SumaPierwszych3(){
+    printf("Suma pierwszych 3: %d \n",31+29+31);
 }
-void zadanie2(){
-int age;
-cin >> age;
-if( age < 18 )
-std::cout << "Authorization declined" << std::endl;
-else
-std::cout << "Authorization accepted" << std::endl;
-std::cout << "End" << std::endl;
+void SumaPierwszych10(){
+    int suma=0;
+    for(int i=1;i<=10;i++){
+        suma+=i;
+    }
+    printf("Suma pierwszych 10: %d \n", suma);
 }
 
-void NWD(int a, int b){
-   while (a != b) {
-        if(a > b)
-            a = a - b;
-        else
-            b = b - a;
+void IlorazPierwszych10(){
+    int Iloraz =1;
+    for(int i=1;i<=10;i++){
+        Iloraz=Iloraz*i;
     }
-    cout <<a<<endl;
-    }
-void NWW(int a, int b){
-    while (b != 0) {
-        int pom = b;
-        b = a % b;
-        a = pom;
-    }
-    cout << a << endl;
-    }
-void zadanie3(){
-    int a,b,program;
-    cin >> a >>b >>program;
-    switch(program){
-case 0:
-    NWD(a,b);
-    break;
-case 1:
-    NWW(a,b);
-    break;
-default:
-    cout << "Error"<< endl;
-    break;
+    printf("Iloraz pierwszych 10: %d \n", Iloraz);
+}
+
+void StanKonta(){
+    double Stan=1000;
+    for(int i=1;i<=3;i++)
+    {
+        Stan=Stan*1.06;
+        printf("Stan konta po %d roku: %f \n", i, Stan);
     }
 }
 
-void zadanie4(){
-    int a,b,c;
-    cin >>a>>b>>c;
-    if(a==b || a==c || b==c || c==b ) printf("Liczby nie stanowia trojke pitagorejska");
-    else if(a>b && a >c) pow(a,2)==pow(b,2)+pow(c,2) ? printf("Liczby stanowia trojke pitagorejska") : printf("Liczby nie stanowia trojke pitagorejska");
-    else if(b>a && b>c) pow(b,2)==pow(a,2)+pow(c,2) ? printf("Liczby stanowia trojke pitagorejska") : printf("Liczby nie stanowia trojke pitagorejska");
-    else if(c>a && c>b) pow(c,2)==pow(b,2)+pow(a,2) ? printf("Liczby stanowia trojke pitagorejska") : printf("Liczby nie stanowia trojke pitagorejska");
+void ZnakProgramowanie(){
+    char i = 191;
+    printf("+---------------+ \n");
+    printf("| Programowanie | \n");
+    printf("+---------------+ \n");
+}
+
+void Twarz(){
+    printf("   ///// \n");
+    printf("  +\"\"\"\"\"+ \n");
+    printf(" (| o o |) \n");
+    printf("   | ^ | \n");
+    printf("  | '-' | \n");
+    printf("  +-----+ \n");
+}
+
+void ImieNazwisko2(){
+    printf("****                                    *     *                \n");
+    printf("*    *                          *       *     *                \n");
+    printf("*    *                                  *     *               \n");
+    printf("*    *    ***   *            *  *   *****     *       *****    *            *     ***  \n");
+    printf("*    *      *   *            *  *  *    *     *      *     *   *            *       * \n");
+    printf("*    *   ****   *      *     *  *  *    *     *      *******   *      *     *    **** \n");
+    printf("*    *  *   *    *    * *   *   *  *    *     *      *          *    * *   *    *   * \n");
+    printf("*    *  *  **     *  *   * *    *  *    *     *      *     *     *  *   * *     *  ** \n");
+    printf("****    *** *      *      *     *   *****     *****   *****       *      *      *** *\n");
 
 }
 
-double convert(int t, char u){
-    if(u=='c') return ((t*9/5.0)+32.0);
-    if(u=='f') return ((t-32.0)*5/9.0);
+void ImitacjaObrazu(){
+
+    printf("@@@@@@||*************************\n");
+    printf("@@@@@@||*************************\n");
+    printf("@@@@@@||*************************\n");
+    printf("@@@@@@||*************************\n");
+    printf("||||||||*************************\n");
+    printf("||||||||*************************\n");
+    printf("@@@@@@||*************************\n");
+    printf("@@@@@@||*************************\n");
+    printf("@@@@@@||*************************\n");
+    printf("@@@@@@||*************************\n");
+    printf("|||||||||||||||||||||||||||||||||\n");
+    printf("&&&&&&||@@@@@@@@@@@@@@@@||@@@@@@@\n");
+    printf("&&&&&&||@@@@@@@@@@@@@@@@|||||||||\n");
+    printf("&&&&&&||@@@@@@@@@@@@@@@@||#######\n");
+
 }
 
-void zadanie5(){
-    int liczba;
-    cin >> liczba;
-    char znak;
-    cin >> znak;
-   double wynik= convert(liczba,znak);
-   znak=='c' ? cout << wynik <<"F"<< endl : cout << wynik<<"C" << endl;
+void RysowanieDomu(){
+    printf("      + \n");
+    printf("     + +\n");
+    printf("    +   +\n");
+    printf("   +-----+\n");
+    printf("   | .-. |\n");
+    printf("   | | | |\n");
+    printf("   +-+-+-+\n");
 }
 
-int main()
-{
-   // zadanie1();
-   // zadanie2();
-  //  zadanie3();
-   zadanie4();
-   //   zadanie5();
+void ZwierzeWcaleNiePodobne(){
+    printf(" /\\_/\\ -----\n");
+    printf("( ' ' ) / Hello \\ \n");
+    printf("(  -  ) < Junior |\n");
+    printf(" | | |  \\ Coder!/\n");
+    printf("(__|__) -----\n");
+}
 
+void Nazwiska(){
+    printf("Nowak \nSzostakowski \nBiedron \n");
+}
+
+void limeryk(){
+    setlocale(LC_CTYPE, "Polish");
+    printf("Pewien dzialacz imieniem Mao \nnarozrabial w Chinach niemao. \nDobrze o nim pisao\nusluzne ,,Zenmin Zypan'',\nbo sie bardzo tego Mao bao.\n");
+}
+
+void ZmiennaPrzecinkowa(){
+    float liczba;
+    scanf("%f", &liczba);
+    if(liczba >=0) printf("%f\n",liczba);
+    else printf("%f\n",liczba*-1);
+
+}
+int main() {
+    // Sekwencyjne Wczytywanie
+   // ImieNazwisko();
+   // SumaPierwszych3();
+   // SumaPierwszych10();
+   // IlorazPierwszych10();
+   // StanKonta();
+   // ZnakProgramowanie();
+   // Twarz();
+   // ImieNazwisko2();
+   //ImitacjaObrazu();
+   //RysowanieDomu();
+   //ZwierzeWcaleNiePodobne();
+   //Nazwiska();
+   //limeryk();
+   //Proste Obliczenia
+   ZmiennaPrzecinkowa();
     return 0;
 }
