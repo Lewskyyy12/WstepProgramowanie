@@ -1,139 +1,96 @@
-#include <stdio.h>
-#include <locale.h>
+#include "stdio.h"
+#include "math.h"
 
-void ImieNazwisko(){
-    printf("Dawid Lewanodwski");
-    printf("Dawid\nLewanodwski");
-    printf("Dawid\n");
-    printf("Lewandowski\n");
+int sgn(double x){
+    if(x>0) return 1;
+    if(x<0) return (-1);
+    if(x==0) return 0;
 
 }
-void SumaPierwszych3(){
-    printf("Suma pierwszych 3: %d \n",31+29+31);
+
+double mini(double x, double y){
+    if(x<=y) return x;
+    else return y;
 }
-void SumaPierwszych10(){
-    int suma=0;
-    for(int i=1;i<=10;i++){
-        suma+=i;
+
+double najmniejsza(double x, double y, double z){
+  return mini(z,mini(x,y));
+
+}
+double srednia(double x, double y, double z){
+    return ((x+y+z)/3);
+}
+double potega(double x, int n){
+    double potegowana=x;
+    for(int i=1;i<n;i++){
+        potegowana=potegowana*x;
     }
-    printf("Suma pierwszych 10: %d \n", suma);
+    return potegowana;
 }
 
-void IlorazPierwszych10(){
-    int Iloraz =1;
-    for(int i=1;i<=10;i++){
-        Iloraz=Iloraz*i;
+int pierwsza_cyfra(int n){
+    while(n>10){
+        n=n/10;
     }
-    printf("Iloraz pierwszych 10: %d \n", Iloraz);
+    return n;
 }
 
-void StanKonta(){
-    double Stan=1000;
-    for(int i=1;i<=3;i++)
-    {
-        Stan=Stan*1.06;
-        printf("Stan konta po %d roku: %f \n", i, Stan);
+int ostatnia_cyfra(int n){
+    int x = n%10;
+    return x;
+}
+
+int ile_cyfr(int n){
+    int licz=0;
+    while(n>10){
+        n=n/10;
+        licz++;
     }
+    return licz+1;
 }
 
-void ZnakProgramowanie(){
-    char i = 191;
-    printf("+---------------+ \n");
-    printf("| Programowanie | \n");
-    printf("+---------------+ \n");
+double StanKonta(double x, double y, int z){
+    return (x*pow((1+(y/100)),z));
 }
 
-void Twarz(){
-    printf("   ///// \n");
-    printf("  +\"\"\"\"\"+ \n");
-    printf(" (| o o |) \n");
-    printf("   | ^ | \n");
-    printf("  | '-' | \n");
-    printf("  +-----+ \n");
-}
+void liczby_doskonale_mniejsze(){
+    int n, suma=0;
+    scanf("%d",&n);
+    for(int i=1;i<n;i++){
+        for(int y=1;y<i;y++) {
+            if (i % y == 0) suma += y;
 
-void ImieNazwisko2(){
-    printf("****                                    *     *                \n");
-    printf("*    *                          *       *     *                \n");
-    printf("*    *                                  *     *               \n");
-    printf("*    *    ***   *            *  *   *****     *       *****    *            *     ***  \n");
-    printf("*    *      *   *            *  *  *    *     *      *     *   *            *       * \n");
-    printf("*    *   ****   *      *     *  *  *    *     *      *******   *      *     *    **** \n");
-    printf("*    *  *   *    *    * *   *   *  *    *     *      *          *    * *   *    *   * \n");
-    printf("*    *  *  **     *  *   * *    *  *    *     *      *     *     *  *   * *     *  ** \n");
-    printf("****    *** *      *      *     *   *****     *****   *****       *      *      *** *\n");
+        }
+        if(suma==i) printf("%d \n",suma);
+        suma=0;
+    }
 
 }
 
-void ImitacjaObrazu(){
-
-    printf("@@@@@@||*************************\n");
-    printf("@@@@@@||*************************\n");
-    printf("@@@@@@||*************************\n");
-    printf("@@@@@@||*************************\n");
-    printf("||||||||*************************\n");
-    printf("||||||||*************************\n");
-    printf("@@@@@@||*************************\n");
-    printf("@@@@@@||*************************\n");
-    printf("@@@@@@||*************************\n");
-    printf("@@@@@@||*************************\n");
-    printf("|||||||||||||||||||||||||||||||||\n");
-    printf("&&&&&&||@@@@@@@@@@@@@@@@||@@@@@@@\n");
-    printf("&&&&&&||@@@@@@@@@@@@@@@@|||||||||\n");
-    printf("&&&&&&||@@@@@@@@@@@@@@@@||#######\n");
-
-}
-
-void RysowanieDomu(){
-    printf("      + \n");
-    printf("     + +\n");
-    printf("    +   +\n");
-    printf("   +-----+\n");
-    printf("   | .-. |\n");
-    printf("   | | | |\n");
-    printf("   +-+-+-+\n");
-}
-
-void ZwierzeWcaleNiePodobne(){
-    printf(" /\\_/\\ -----\n");
-    printf("( ' ' ) / Hello \\ \n");
-    printf("(  -  ) < Junior |\n");
-    printf(" | | |  \\ Coder!/\n");
-    printf("(__|__) -----\n");
-}
-
-void Nazwiska(){
-    printf("Nowak \nSzostakowski \nBiedron \n");
-}
-
-void limeryk(){
-    setlocale(LC_CTYPE, "Polish");
-    printf("Pewien dzialacz imieniem Mao \nnarozrabial w Chinach niemao. \nDobrze o nim pisao\nusluzne ,,Zenmin Zypan'',\nbo sie bardzo tego Mao bao.\n");
-}
-
-void ZmiennaPrzecinkowa(){
-    float liczba;
-    scanf("%f", &liczba);
-    if(liczba >=0) printf("%f\n",liczba);
-    else printf("%f\n",liczba*-1);
-
-}
 int main() {
-    // Sekwencyjne Wczytywanie
-   // ImieNazwisko();
-   // SumaPierwszych3();
-   // SumaPierwszych10();
-   // IlorazPierwszych10();
-   // StanKonta();
-   // ZnakProgramowanie();
-   // Twarz();
-   // ImieNazwisko2();
-   //ImitacjaObrazu();
-   //RysowanieDomu();
-   //ZwierzeWcaleNiePodobne();
-   //Nazwiska();
-   //limeryk();
-   //Proste Obliczenia
-   ZmiennaPrzecinkowa();
-    return 0;
+//    double x;
+//    scanf("%lf", &x);
+//    printf("%d", sgn(x));
+//double x,y,z;
+   //scanf("%lf",&x);
+   // scanf("%lf",&y);
+   // scanf("%lf",&z);
+//    printf("%lf", najmniejsza(x,y,z));
+//    printf("%lf", srednia(x,y,z));
+//   printf("%lf", potega(x,3));
+//int n;
+    //scanf("%d",&n);
+    //printf("Pierwsza cyfra: %d \n", pierwsza_cyfra(n));
+    //printf("Ostatnia cyfra: %d \n", ostatnia_cyfra(n));
+    //printf("Ilosc cyfr: %d \n", ile_cyfr(n));
+
+   // double stan_konta;
+   // double stopa_procentowa;
+   // int liczba_lat;
+   // scanf("%lf", &stan_konta);
+   // scanf("%lf", &stopa_procentowa);
+   // scanf("%d", &liczba_lat);
+   // printf("Stan konta wynosi: %lf", StanKonta(stan_konta,stopa_procentowa,liczba_lat));
+    liczby_doskonale_mniejsze();
+
 }
